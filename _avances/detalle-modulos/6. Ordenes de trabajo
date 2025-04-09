@@ -1,0 +1,53 @@
+Módulo: Ordenes de trabajo
+Por: Luis Javier Palomino Astulle
+Módulo: Órdenes de trabajo 
+
+1. ¿Cuál es el objetivo de su módulo?
+El objetivo del módulo de Órdenes de trabajo es gestionar eficientemente la preparación de pedidos, incluyendo el picking (selección de productos) y el empaque, asegurando que cada solicitud sea atendida de forma rápida, precisa y conforme a los estándares de calidad del almacén.
+
+2. ¿A quién beneficia el funcionamiento de su módulo?
+Este módulo beneficia a:
+-Área de almacén y operaciones, al facilitar la asignación de tareas, seguimiento del cumplimiento y reducción de errores en la preparación de pedidos.
+-Área de atención al cliente, ya que mejora los tiempos de respuesta y precisión en los pedidos.
+-Clientes, al recibir productos correctamente empacados y completos, mejorando su experiencia.
+-La empresa, ya que optimiza recursos, reduce reprocesos y mejora la eficiencia operativa.
+
+3. ¿Qué resultado genera su módulo? ¿Es un producto o un servicio?
+El módulo ofrece un servicio logístico interno, generando como resultado:
+-Pedidos listos para despacho, correctamente empacados.
+-Registro del proceso de picking y empaque por cada orden.
+-Reducción de errores y mejora del cumplimiento de tiempos.
+
+Resultados esperados:
+-Alta precisión en la preparación de pedidos.
+-Información actualizada del estado de cada orden.
+-Reportes de cumplimiento diario.
+
+Características:
+-Generación de órdenes de trabajo por cliente o pedido.
+-Asignación de tareas de picking por operario.
+-Confirmación de empaque y control de calidad.
+-Vinculación con el módulo de seguimiento.
+-Registro de tiempo empleado por orden.
+-Trazabilidad de productos por lote, peso, y ubicación.
+
+4. ¿Qué recursos se emplean para obtener dicho resultado?
+
+-Sistema de gestión de almacén (WMS) con módulo de órdenes de trabajo.
+-Base de datos con inventario en tiempo real.
+-Personal de almacén (pickers y empacadores).
+-Equipos de identificación (lectores de código de barras, tablets, impresoras).
+-Área de control de calidad.
+
+5. ¿Cómo se planifican el uso de estos recursos?
+
+Planificación diaria de tareas según las órdenes ingresadas.
+Asignación automática o manual de personal a cada orden.
+Uso de métricas e indicadores para mejorar productividad y balancear cargas.
+Seguimiento en tiempo real del avance de cada orden.
+
+6. ¿Cómo se reserva el uso/la propiedad del producto o servicio generado?
+
+Las órdenes son registradas en el sistema interno y asignadas con número único.
+Toda la información relacionada (productos, responsable, tiempo de ejecución, incidencias) queda registrada.
+El acceso está segmentado por niveles según el perfil del usuario.
