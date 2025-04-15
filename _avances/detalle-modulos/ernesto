@@ -1,0 +1,33 @@
+MÓDULO: CONTROL DE ALMACÉN
+1. ¿Cuál es el objetivo de su módulo?
+El objetivo principal del módulo de Control de Almacén es gestionar y monitorear el estado de la mercadería dentro del sistema, permitiendo un control preciso sobre el inventario disponible, el estado de cada producto (nuevo, en tránsito, dañado, vendido, etc.) y su ubicación exacta en el almacén. Esto garantiza una trazabilidad eficiente y una administración adecuada de los recursos físicos.
+2. ¿A quién beneficia el funcionamiento de su módulo (área interna, cliente - persona o empresa)?
+Este módulo beneficia tanto a la empresa como al cliente final.
+Para la empresa, proporciona una herramienta para optimizar la gestión del inventario, reducir pérdidas por errores o robos, y mejorar la toma de decisiones logísticas.
+Para el cliente final, asegura que los productos lleguen en buen estado, en el tiempo pactado y conforme a lo solicitado, mejorando la experiencia de compra y la satisfacción del usuario.
+3. ¿Qué resultado genera su módulo? ¿Es un producto o un servicio? ¿Qué características tiene?
+El módulo genera como resultado un servicio de control y seguimiento del inventario.
+Este servicio permite:
+Monitorear el movimiento de cada producto en tiempo real.
+Identificar productos mediante su código único.
+Obtener detalles como descripción del producto, fecha de ingreso, ubicación, stock actual, estado del producto, entre otros.
+Generar reportes automáticos para análisis y toma de decisiones.
+4. ¿Qué recursos se emplean para obtener dicho resultado?
+Los recursos principales para el funcionamiento del módulo son:
+Información proporcionada por el cliente (órdenes, productos, cantidades, etc.).
+Datos internos del sistema (stock, códigos, fechas).
+Software del sistema de almacén y conexión con bases de datos.
+Personal encargado del registro y control.
+Dispositivos tecnológicos como escáneres de códigos, tablets o computadoras
+
+5. ¿Cómo se planifica el uso de estos recursos?
+La planificación se realiza de manera continua.
+Diariamente se actualiza e ingresa nueva información al sistema, ya sea por movimientos de entrada, salida o traslado de productos.
+Se establecen protocolos y rutinas operativas para el ingreso de datos, validación de inventario y generación de reportes, con el fin de mantener la información actualizada y confiable.
+6. ¿Cómo se reserva el uso / la propiedad del producto o servicio generado?
+Cada cliente tiene un usuario único y personalizado, con credenciales seguras, que le permite acceder exclusivamente a la información relacionada con su inventario.
+De esta forma se garantiza:
+La privacidad y seguridad de la información.
+La propiedad de los datos y productos controlados por el sistema.
+Un acceso individualizado para realizar consultas, seguimientos o gestiones específicas según su rol o necesidad 
+ 
