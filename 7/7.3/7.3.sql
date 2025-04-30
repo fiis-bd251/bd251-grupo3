@@ -656,110 +656,6 @@ VALUES
 (40000050, 150, TO_TIMESTAMP('2025-05-20 12:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'SMS', 'Pendiente', 4, TO_TIMESTAMP('2025-05-20 12:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('2025-05-20 16:30:00', 'YYYY-MM-DD HH24:MI:SS'));
 
 
-
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (1, 'Nombre1', '991629106', 'cliente1@correo.com', 'Paterno1', 'Materno1', 'Calle 1 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (2, 'Nombre2', '912054155', 'cliente2@correo.com', 'Paterno2', 'Materno2', 'Calle 2 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (3, 'Nombre3', '920596431', 'cliente3@correo.com', 'Paterno3', 'Materno3', 'Calle 3 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (4, 'Nombre4', '927480333', 'cliente4@correo.com', 'Paterno4', 'Materno4', 'Calle 4 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (5, 'Nombre5', '940232466', 'cliente5@correo.com', 'Paterno5', 'Materno5', 'Calle 5 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (6, 'Nombre6', '972021470', 'cliente6@correo.com', 'Paterno6', 'Materno6', 'Calle 6 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (7, 'Nombre7', '996685584', 'cliente7@correo.com', 'Paterno7', 'Materno7', 'Calle 7 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (8, 'Nombre8', '964391210', 'cliente8@correo.com', 'Paterno8', 'Materno8', 'Calle 8 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (9, 'Nombre9', '932727039', 'cliente9@correo.com', 'Paterno9', 'Materno9', 'Calle 9 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (10, 'Nombre10', '919356888', 'cliente10@correo.com', 'Paterno10', 'Materno10', 'Calle 10 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (11, 'Nombre11', '952528768', 'cliente11@correo.com', 'Paterno11', 'Materno11', 'Calle 11 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (12, 'Nombre12', '955597910', 'cliente12@correo.com', 'Paterno12', 'Materno12', 'Calle 12 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (13, 'Nombre13', '978359609', 'cliente13@correo.com', 'Paterno13', 'Materno13', 'Calle 13 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (14, 'Nombre14', '982452177', 'cliente14@correo.com', 'Paterno14', 'Materno14', 'Calle 14 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (15, 'Nombre15', '982637038', 'cliente15@correo.com', 'Paterno15', 'Materno15', 'Calle 15 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (16, 'Nombre16', '960914781', 'cliente16@correo.com', 'Paterno16', 'Materno16', 'Calle 16 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (17, 'Nombre17', '982188586', 'cliente17@correo.com', 'Paterno17', 'Materno17', 'Calle 17 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (18, 'Nombre18', '973178910', 'cliente18@correo.com', 'Paterno18', 'Materno18', 'Calle 18 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (19, 'Nombre19', '935946093', 'cliente19@correo.com', 'Paterno19', 'Materno19', 'Calle 19 Ciudad');
-INSERT INTO CLIENTE (idCliente, nombre, telefono, email, apellido_paterno, apellido_materno, direccion) VALUES (20, 'Nombre20', '995854642', 'cliente20@correo.com', 'Paterno20', 'Materno20', 'Calle 20 Ciudad');
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (1, 'Reservado', 'Almacen 5', 'Producto de tipo A con características especiales.', TO_DATE('2025-01-29', 'YYYY-MM-DD'), TO_DATE('2025-04-14 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (2, 'En tránsito', 'Almacen 5', 'Producto de tipo C con características especiales.', TO_DATE('2025-03-05', 'YYYY-MM-DD'), TO_DATE('2025-04-01 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (3, 'En tránsito', 'Almacen 2', 'Producto de tipo A con características especiales.', TO_DATE('2025-04-20', 'YYYY-MM-DD'), TO_DATE('2025-03-23 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (4, 'Reservado', 'Almacen 2', 'Producto de tipo C con características especiales.', TO_DATE('2025-01-29', 'YYYY-MM-DD'), TO_DATE('2025-04-11 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (5, 'Reservado', 'Almacen 4', 'Producto de tipo B con características especiales.', TO_DATE('2025-02-14', 'YYYY-MM-DD'), TO_DATE('2025-04-22 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (6, 'Disponible', 'Almacen 1', 'Producto de tipo A con características especiales.', TO_DATE('2025-01-04', 'YYYY-MM-DD'), TO_DATE('2025-02-25 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (7, 'Reservado', 'Almacen 2', 'Producto de tipo C con características especiales.', TO_DATE('2025-03-22', 'YYYY-MM-DD'), TO_DATE('2025-04-17 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (8, 'Disponible', 'Almacen 2', 'Producto de tipo C con características especiales.', TO_DATE('2025-01-09', 'YYYY-MM-DD'), TO_DATE('2025-04-20 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (9, 'Disponible', 'Almacen 5', 'Producto de tipo B con características especiales.', TO_DATE('2025-04-16', 'YYYY-MM-DD'), TO_DATE('2025-03-07 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (10, 'En tránsito', 'Almacen 5', 'Producto de tipo C con características especiales.', TO_DATE('2025-02-06', 'YYYY-MM-DD'), TO_DATE('2025-01-19 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (11, 'En tránsito', 'Almacen 4', 'Producto de tipo C con características especiales.', TO_DATE('2025-02-15', 'YYYY-MM-DD'), TO_DATE('2025-01-28 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (12, 'Disponible', 'Almacen 3', 'Producto de tipo B con características especiales.', TO_DATE('2025-03-07', 'YYYY-MM-DD'), TO_DATE('2025-04-22 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (13, 'En tránsito', 'Almacen 5', 'Producto de tipo B con características especiales.', TO_DATE('2025-01-30', 'YYYY-MM-DD'), TO_DATE('2025-04-13 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (14, 'En tránsito', 'Almacen 2', 'Producto de tipo A con características especiales.', TO_DATE('2025-03-27', 'YYYY-MM-DD'), TO_DATE('2025-03-19 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (15, 'Reservado', 'Almacen 4', 'Producto de tipo C con características especiales.', TO_DATE('2025-04-29', 'YYYY-MM-DD'), TO_DATE('2025-01-17 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (16, 'Reservado', 'Almacen 1', 'Producto de tipo C con características especiales.', TO_DATE('2025-02-25', 'YYYY-MM-DD'), TO_DATE('2025-01-26 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (17, 'Reservado', 'Almacen 2', 'Producto de tipo A con características especiales.', TO_DATE('2025-04-24', 'YYYY-MM-DD'), TO_DATE('2025-03-14 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (18, 'Reservado', 'Almacen 5', 'Producto de tipo A con características especiales.', TO_DATE('2025-04-09', 'YYYY-MM-DD'), TO_DATE('2025-02-09 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (19, 'Reservado', 'Almacen 5', 'Producto de tipo B con características especiales.', TO_DATE('2025-03-07', 'YYYY-MM-DD'), TO_DATE('2025-02-24 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PRODUCTO (idProdcuto, estado, ubicacion, Descripcion, fecha_ingeso, fecha_picking) VALUES (20, 'En tránsito', 'Almacen 5', 'Producto de tipo C con características especiales.', TO_DATE('2025-03-30', 'YYYY-MM-DD'), TO_DATE('2025-03-27 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (1, 1, 'Pendiente', 46, 'Sección X', TO_DATE('2025-04-25 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (2, 2, 'Pendiente', 59, 'Sección Y', TO_DATE('2025-01-28 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (3, 3, 'Empacado', 17, 'Sección Y', TO_DATE('2025-02-16 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (4, 4, 'Enviado', 45, 'Sección Z', TO_DATE('2025-04-24 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (5, 5, 'Pendiente', 57, 'Sección Z', TO_DATE('2025-02-10 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (6, 6, 'Enviado', 77, 'Sección Y', TO_DATE('2025-02-06 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (7, 7, 'Pendiente', 67, 'Sección Y', TO_DATE('2025-04-17 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (8, 8, 'Enviado', 13, 'Sección Z', TO_DATE('2025-03-03 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (9, 9, 'Empacado', 86, 'Sección Y', TO_DATE('2025-04-23 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (10, 10, 'Enviado', 21, 'Sección X', TO_DATE('2025-01-06 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (11, 11, 'Pendiente', 90, 'Sección X', TO_DATE('2025-01-26 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (12, 12, 'Pendiente', 45, 'Sección Y', TO_DATE('2025-01-26 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (13, 13, 'Pendiente', 41, 'Sección Z', TO_DATE('2025-01-09 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (14, 14, 'Pendiente', 52, 'Sección Y', TO_DATE('2025-01-30 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (15, 15, 'Enviado', 95, 'Sección X', TO_DATE('2025-03-23 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (16, 16, 'Pendiente', 82, 'Sección Z', TO_DATE('2025-02-26 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (17, 17, 'Empacado', 86, 'Sección Z', TO_DATE('2025-01-21 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (18, 18, 'Empacado', 83, 'Sección Z', TO_DATE('2025-01-22 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (19, 19, 'Empacado', 93, 'Sección Z', TO_DATE('2025-02-20 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO PAQUETE (idPaquete, idProdcuto, estado_paquete, cantidad_producto, ubicacion_paquete, fecha_creacion) VALUES (20, 20, 'Enviado', 97, 'Sección X', TO_DATE('2025-04-24 00:00:00', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (1, 1, 1, 'En espera', 4, 'Zona Oeste', TO_DATE('2025-04-04', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (2, 2, 2, 'Cerrado', 5, 'Zona Sur', TO_DATE('2025-03-20', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (3, 3, 3, 'En espera', 2, 'Zona Norte', TO_DATE('2025-04-27', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (4, 4, 4, 'Activo', 8, 'Zona Norte', TO_DATE('2025-02-01', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (5, 5, 5, 'Activo', 10, 'Zona Este', TO_DATE('2025-02-13', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (6, 6, 6, 'En espera', 2, 'Zona Norte', TO_DATE('2025-03-02', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (7, 7, 7, 'Cerrado', 5, 'Zona Oeste', TO_DATE('2025-02-05', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (8, 8, 8, 'Cerrado', 8, 'Zona Sur', TO_DATE('2025-01-11', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (9, 9, 9, 'Cerrado', 7, 'Zona Norte', TO_DATE('2025-04-24', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (10, 10, 10, 'En espera', 4, 'Zona Sur', TO_DATE('2025-03-12', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (11, 11, 11, 'En espera', 7, 'Zona Norte', TO_DATE('2025-01-10', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (12, 12, 12, 'Cerrado', 6, 'Zona Sur', TO_DATE('2025-01-04', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (13, 13, 13, 'Activo', 4, 'Zona Este', TO_DATE('2025-03-08', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (14, 14, 14, 'Cerrado', 4, 'Zona Este', TO_DATE('2025-01-13', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (15, 15, 15, 'Cerrado', 7, 'Zona Oeste', TO_DATE('2025-03-01', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (16, 16, 16, 'En espera', 8, 'Zona Este', TO_DATE('2025-04-28', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (17, 17, 17, 'Cerrado', 6, 'Zona Este', TO_DATE('2025-03-30', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (18, 18, 18, 'En espera', 8, 'Zona Oeste', TO_DATE('2025-03-04', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (19, 19, 19, 'Cerrado', 2, 'Zona Sur', TO_DATE('2025-01-05', 'YYYY-MM-DD'));
-INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (20, 20, 20, 'En espera', 9, 'Zona Sur', TO_DATE('2025-01-26', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (1, 1001, 'VH00000001', '0000000001', '2087259265', TO_DATE('2025-04-05', 'YYYY-MM-DD'), TO_DATE('2025-01-07', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (2, 1002, 'VH00000002', '0000000002', '2039798165', TO_DATE('2025-01-08', 'YYYY-MM-DD'), TO_DATE('2025-01-31', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (3, 1003, 'VH00000003', '0000000003', '2072624209', TO_DATE('2025-03-12', 'YYYY-MM-DD'), TO_DATE('2025-02-04', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (4, 1004, 'VH00000004', '0000000004', '2050174838', TO_DATE('2025-01-10', 'YYYY-MM-DD'), TO_DATE('2025-04-24', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (5, 1005, 'VH00000005', '0000000005', '2067913063', TO_DATE('2025-01-05', 'YYYY-MM-DD'), TO_DATE('2025-02-09', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (6, 1006, 'VH00000006', '0000000006', '2075853680', TO_DATE('2025-04-28', 'YYYY-MM-DD'), TO_DATE('2025-03-25', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (7, 1007, 'VH00000007', '0000000007', '2017295218', TO_DATE('2025-01-05', 'YYYY-MM-DD'), TO_DATE('2025-02-25', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (8, 1008, 'VH00000008', '0000000008', '2034960155', TO_DATE('2025-01-22', 'YYYY-MM-DD'), TO_DATE('2025-04-29', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (9, 1009, 'VH00000009', '0000000009', '2038445039', TO_DATE('2025-02-20', 'YYYY-MM-DD'), TO_DATE('2025-02-19', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (10, 1010, 'VH00000010', '0000000010', '2080011061', TO_DATE('2025-03-25', 'YYYY-MM-DD'), TO_DATE('2025-03-01', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (11, 1011, 'VH00000011', '0000000011', '2077907223', TO_DATE('2025-01-25', 'YYYY-MM-DD'), TO_DATE('2025-04-11', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (12, 1012, 'VH00000012', '0000000012', '2023969811', TO_DATE('2025-02-15', 'YYYY-MM-DD'), TO_DATE('2025-01-09', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (13, 1013, 'VH00000013', '0000000013', '2061767210', TO_DATE('2025-03-16', 'YYYY-MM-DD'), TO_DATE('2025-01-29', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (14, 1014, 'VH00000014', '0000000014', '2043823144', TO_DATE('2025-01-24', 'YYYY-MM-DD'), TO_DATE('2025-02-02', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (15, 1015, 'VH00000015', '0000000015', '2055838831', TO_DATE('2025-03-25', 'YYYY-MM-DD'), TO_DATE('2025-04-25', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (16, 1016, 'VH00000016', '0000000016', '2065494908', TO_DATE('2025-04-05', 'YYYY-MM-DD'), TO_DATE('2025-02-05', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (17, 1017, 'VH00000017', '0000000017', '2029998421', TO_DATE('2025-01-27', 'YYYY-MM-DD'), TO_DATE('2025-01-23', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (18, 1018, 'VH00000018', '0000000018', '2093204968', TO_DATE('2025-03-08', 'YYYY-MM-DD'), TO_DATE('2025-02-24', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (19, 1019, 'VH00000019', '0000000019', '2021106200', TO_DATE('2025-01-29', 'YYYY-MM-DD'), TO_DATE('2025-01-27', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (20, 1020, 'VH00000020', '0000000020', '2026916049', TO_DATE('2025-02-02', 'YYYY-MM-DD'), TO_DATE('2025-04-25', 'YYYY-MM-DD'));
-
-
-
 -- Proveedor
 INSERT INTO PROVEEDOR (idProveedor, razon_social, ruc, correo, numero_contacto_proveedor)
 VALUES
@@ -1494,6 +1390,57 @@ VALUES ('2025-04-23', 5, 10, 5, 'Cambio de filtro');
 ('2025-04-21', 6, 6, 5, 'Recarga de combustible');
 ('2025-04-17', 2, 3, 4, 'Revisión de sistema hidráulico');
 
+
+
+INSERT INTO ORDEN_TRANSPORTE VALUES (1,1,'ALMACEN_TRUJILLO','ALMACEN_LIMA',TO_DATE('2023-10-01','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-02 14:30:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (2,2,'ALMACEN_AREQUIPA','ALMACEN_LIMA',TO_DATE('2023-10-02','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-03 16:45:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (3,3,'ALMACEN_PIURA','ALMACEN_LIMA',TO_DATE('2023-10-03','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-04 11:20:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (4,4,'ALMACEN_CUSCO','ALMACEN_LIMA',TO_DATE('2023-10-04','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-05 18:30:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (5,5,'ALMACEN_ICA','ALMACEN_LIMA',TO_DATE('2023-10-05','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-06 12:15:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (6,6,'ALMACEN_HUANCAYO','ALMACEN_LIMA',TO_DATE('2023-10-07','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-08 13:10:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (7,7,'ALMACEN_TACNA','ALMACEN_LIMA',TO_DATE('2023-10-08','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-09 17:20:00','YYYY-MM-DD HH24:MI:SS'));
+
+
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (1, 1, 1, '2073337616', TO_DATE('2025-05-08','YYYY-MM-DD'), TO_DATE('2025-04-26','YYYY-MM-DD'), 1);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (2, 2, 2, '2036749864', TO_DATE('2025-04-28','YYYY-MM-DD'), TO_DATE('2025-04-25','YYYY-MM-DD'), 2);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (3, 3, 3, '2062262409', TO_DATE('2025-04-30','YYYY-MM-DD'), TO_DATE('2025-05-04','YYYY-MM-DD'), 3);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (4, 4, 4, '2045462024', TO_DATE('2025-05-04','YYYY-MM-DD'), TO_DATE('2025-05-07','YYYY-MM-DD'), 4);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (5, 5, 5, '2089994359', TO_DATE('2025-04-25','YYYY-MM-DD'), TO_DATE('2025-05-03','YYYY-MM-DD'), 5);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (6, 6, 6, '2095134821', TO_DATE('2025-05-02','YYYY-MM-DD'), TO_DATE('2025-04-27','YYYY-MM-DD'), 6);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (7, 7, 7, '2088602774', TO_DATE('2025-05-06','YYYY-MM-DD'), TO_DATE('2025-05-04','YYYY-MM-DD'), 7);
+
+
+INSERT INTO INFORME_ENTREGA VALUES (1, 1, TO_DATE('2023-10-02','YYYY-MM-DD'), 'ENTREGADO', 'Juan Pérez');
+INSERT INTO INFORME_ENTREGA VALUES (2, 2, TO_DATE('2023-10-05','YYYY-MM-DD'), 'ENTREGADO_CON_RETRASO', 'María Gómez');
+INSERT INTO INFORME_ENTREGA VALUES (3, 3, TO_DATE('2023-10-06','YYYY-MM-DD'), 'ENTREGA_PARCIAL', 'Carlos Rojas');
+INSERT INTO INFORME_ENTREGA VALUES (4, 4, TO_DATE('2023-10-08','YYYY-MM-DD'), 'RECHAZADO', 'Luisa Torres');
+INSERT INTO INFORME_ENTREGA VALUES (5, 5, TO_DATE('2023-10-17','YYYY-MM-DD'), 'ENTREGADO_FIRMADO', 'Roberto Sánchez');
+INSERT INTO INFORME_ENTREGA VALUES (6, 6, TO_DATE('2023-10-20','YYYY-MM-DD'), 'PENDIENTE_VERIFICACION', 'Pedro Vargas');
+
+
+INSERT INTO INCIDENCIAS VALUES (1, 1, 1, 'HUMEDAD', 'Paquetes mojados por lluvia intensa durante el transporte sin protección adecuada', TO_DATE('2023-10-06','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (2, 2, 2, 'HUMEDAD', 'Condensación en contenedor por cambio brusco de temperatura', TO_DATE('2023-10-08','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (3, 3, 3, 'CONTAMINACION', 'Derrame de aceite de motor sobre mercancía por fuga en el vehículo', TO_DATE('2023-10-17','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (4, 4, 4, 'CONTAMINACION', 'Productos alimenticios contaminados por químicos de limpieza', TO_DATE('2023-10-18','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (5, 5, 5, 'DAÑO FISICO', 'Cajas colapsadas por apilamiento incorrecto durante el viaje', TO_DATE('2023-10-20','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (6, 6, 6, 'DAÑO FISICO', 'Rotura de vidrios por impacto durante la descarga', TO_DATE('2023-10-22','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (7, 7, 7, 'RETRASO', 'Entrega fuera de plazo por avería mecánica del vehículo', TO_DATE('2023-10-25','YYYY-MM-DD'));
+
+
+INSERT INTO FOTO_INCIDENCIAS VALUES (1, 1, 'image/jpeg1', 'daño_caja1.jpg', TO_DATE('2023-10-06','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (2, 2, 'image/jpeg2', 'daño_caja2.jpg', TO_DATE('2023-10-08','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (3, 3, 'image/jpeg3', 'daño_caja3.jpg', TO_DATE('2023-10-17','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (4, 4, 'image/jpeg4', 'daño_caja4.jpg', TO_DATE('2023-10-20','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (5, 5, 'image/jpeg5', 'daño_caja5.jpg', TO_DATE('2023-10-23','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (6, 6, 'image/jpeg6', 'daño_caja6.jpg', TO_DATE('2023-10-25','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (8, 7, 'image/jpeg7', 'daño_caja7.jpg', TO_DATE('2023-10-02','YYYY-MM-DD'));
 
 
 
