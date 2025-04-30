@@ -10,7 +10,7 @@ INSERT INTO Producto (id_producto, nombre, unidad_medida, descripcion, tipo_prod
 (8, 'Tablet Lenovo', 'Unidad', 'Tablet de 10 pulgadas', 'Electrónico'),
 (9, 'Proyector Epson', 'Unidad', 'Proyector HD', 'Electrónico'),
 (10, 'Disco Duro Externo', 'Unidad', '1TB almacenamiento', 'Accesorio');
-
+ 
 -- LOTE
 INSERT INTO Lote (id_lote, id_producto, estado_producto) VALUES
 (1, 1, 'Nuevo'),
