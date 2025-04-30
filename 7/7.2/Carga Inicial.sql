@@ -224,12 +224,6 @@ INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, u
 INSERT INTO LOTE (idLote, idCliente, idPaquete, estado_lote, cantidad_paquete, ubicacion_lote, fecha_creacion) VALUES (7, 7, 7, 'Cerrado', 5, 'Zona Oeste', TO_DATE('2025-02-05', 'YYYY-MM-DD'));
 
 
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (1, 1001, 'VH00000001', '0000000001', '2087259265', TO_DATE('2025-04-05', 'YYYY-MM-DD'), TO_DATE('2025-01-07', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (2, 1002, 'VH00000002', '0000000002', '2039798165', TO_DATE('2025-01-08', 'YYYY-MM-DD'), TO_DATE('2025-01-31', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (3, 1003, 'VH00000003', '0000000003', '2072624209', TO_DATE('2025-03-12', 'YYYY-MM-DD'), TO_DATE('2025-02-04', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (4, 1004, 'VH00000004', '0000000004', '2050174838', TO_DATE('2025-01-10', 'YYYY-MM-DD'), TO_DATE('2025-04-24', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (5, 1005, 'VH00000005', '0000000005', '2067913063', TO_DATE('2025-01-05', 'YYYY-MM-DD'), TO_DATE('2025-02-09', 'YYYY-MM-DD'));
-INSERT INTO GUIA_REMISION (idGuiaRemision, idOrdenTransporte, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado) VALUES (6, 1006, 'VH00000006', '0000000006', '2075853680', TO_DATE('2025-04-28', 'YYYY-MM-DD'), TO_DATE('2025-03-25', 'YYYY-MM-DD'));
 
 INSERT INTO PROVEEDOR (idProveedor, razon_social, ruc, correo, numero_contacto_proveedor)
 VALUES
@@ -389,6 +383,55 @@ VALUES ('2025-04-23', 5, 10, 5, 'Cambio de filtro');
 ('2025-04-06', 1, 1, 3, 'Prueba de funcionamiento');
 
 
+INSERT INTO ORDEN_TRANSPORTE VALUES (1,1,'ALMACEN_TRUJILLO','ALMACEN_LIMA',TO_DATE('2023-10-01','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-02 14:30:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (2,2,'ALMACEN_AREQUIPA','ALMACEN_LIMA',TO_DATE('2023-10-02','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-03 16:45:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (3,3,'ALMACEN_PIURA','ALMACEN_LIMA',TO_DATE('2023-10-03','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-04 11:20:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (4,4,'ALMACEN_CUSCO','ALMACEN_LIMA',TO_DATE('2023-10-04','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-05 18:30:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (5,5,'ALMACEN_ICA','ALMACEN_LIMA',TO_DATE('2023-10-05','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-06 12:15:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (6,6,'ALMACEN_HUANCAYO','ALMACEN_LIMA',TO_DATE('2023-10-07','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-08 13:10:00','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO ORDEN_TRANSPORTE VALUES (7,7,'ALMACEN_TACNA','ALMACEN_LIMA',TO_DATE('2023-10-08','YYYY-MM-DD'),TO_TIMESTAMP('2023-10-09 17:20:00','YYYY-MM-DD HH24:MI:SS'));
+
+
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (1, 1, 1, '2073337616', TO_DATE('2025-05-08','YYYY-MM-DD'), TO_DATE('2025-04-26','YYYY-MM-DD'), 1);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (2, 2, 2, '2036749864', TO_DATE('2025-04-28','YYYY-MM-DD'), TO_DATE('2025-04-25','YYYY-MM-DD'), 2);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (3, 3, 3, '2062262409', TO_DATE('2025-04-30','YYYY-MM-DD'), TO_DATE('2025-05-04','YYYY-MM-DD'), 3);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (4, 4, 4, '2045462024', TO_DATE('2025-05-04','YYYY-MM-DD'), TO_DATE('2025-05-07','YYYY-MM-DD'), 4);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (5, 5, 5, '2089994359', TO_DATE('2025-04-25','YYYY-MM-DD'), TO_DATE('2025-05-03','YYYY-MM-DD'), 5);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (6, 6, 6, '2095134821', TO_DATE('2025-05-02','YYYY-MM-DD'), TO_DATE('2025-04-27','YYYY-MM-DD'), 6);
+INSERT INTO GUIA_REMISION (idGuiaRemision, idVehiculo, idCliente, ruc_empresa, fecha_emision, fecha_traslado, ID_ORDEN_TRANSPORTE) 
+VALUES (7, 7, 7, '2088602774', TO_DATE('2025-05-06','YYYY-MM-DD'), TO_DATE('2025-05-04','YYYY-MM-DD'), 7);
+
+
+INSERT INTO INFORME_ENTREGA VALUES (1, 1, TO_DATE('2023-10-02','YYYY-MM-DD'), 'ENTREGADO', 'Juan Pérez');
+INSERT INTO INFORME_ENTREGA VALUES (2, 2, TO_DATE('2023-10-05','YYYY-MM-DD'), 'ENTREGADO_CON_RETRASO', 'María Gómez');
+INSERT INTO INFORME_ENTREGA VALUES (3, 3, TO_DATE('2023-10-06','YYYY-MM-DD'), 'ENTREGA_PARCIAL', 'Carlos Rojas');
+INSERT INTO INFORME_ENTREGA VALUES (4, 4, TO_DATE('2023-10-08','YYYY-MM-DD'), 'RECHAZADO', 'Luisa Torres');
+INSERT INTO INFORME_ENTREGA VALUES (5, 5, TO_DATE('2023-10-17','YYYY-MM-DD'), 'ENTREGADO_FIRMADO', 'Roberto Sánchez');
+INSERT INTO INFORME_ENTREGA VALUES (6, 6, TO_DATE('2023-10-20','YYYY-MM-DD'), 'PENDIENTE_VERIFICACION', 'Pedro Vargas');
+
+
+INSERT INTO INCIDENCIAS VALUES (1, 1, 1, 'HUMEDAD', 'Paquetes mojados por lluvia intensa durante el transporte sin protección adecuada', TO_DATE('2023-10-06','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (2, 2, 2, 'HUMEDAD', 'Condensación en contenedor por cambio brusco de temperatura', TO_DATE('2023-10-08','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (3, 3, 3, 'CONTAMINACION', 'Derrame de aceite de motor sobre mercancía por fuga en el vehículo', TO_DATE('2023-10-17','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (4, 4, 4, 'CONTAMINACION', 'Productos alimenticios contaminados por químicos de limpieza', TO_DATE('2023-10-18','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (5, 5, 5, 'DAÑO FISICO', 'Cajas colapsadas por apilamiento incorrecto durante el viaje', TO_DATE('2023-10-20','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (6, 6, 6, 'DAÑO FISICO', 'Rotura de vidrios por impacto durante la descarga', TO_DATE('2023-10-22','YYYY-MM-DD'));
+INSERT INTO INCIDENCIAS VALUES (7, 7, 7, 'RETRASO', 'Entrega fuera de plazo por avería mecánica del vehículo', TO_DATE('2023-10-25','YYYY-MM-DD'));
+
+
+INSERT INTO FOTO_INCIDENCIAS VALUES (1, 1, 'image/jpeg1', 'daño_caja1.jpg', TO_DATE('2023-10-06','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (2, 2, 'image/jpeg2', 'daño_caja2.jpg', TO_DATE('2023-10-08','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (3, 3, 'image/jpeg3', 'daño_caja3.jpg', TO_DATE('2023-10-17','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (4, 4, 'image/jpeg4', 'daño_caja4.jpg', TO_DATE('2023-10-20','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (5, 5, 'image/jpeg5', 'daño_caja5.jpg', TO_DATE('2023-10-23','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (6, 6, 'image/jpeg6', 'daño_caja6.jpg', TO_DATE('2023-10-25','YYYY-MM-DD'));
+INSERT INTO FOTO_INCIDENCIAS VALUES (8, 7, 'image/jpeg7', 'daño_caja7.jpg', TO_DATE('2023-10-02','YYYY-MM-DD'));
 
 
 
