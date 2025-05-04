@@ -4,276 +4,411 @@ BEGIN
    END LOOP;
 END;
 
-DROP TABLE TRANSPORTISTA ;
-DROP TABLE INCIDENCIAS;
-DROP TABLE FOTO_INCIDENCIAS;
-DROP TABLE INCIDENCIAS;
-DROP TABLE INFORME_ENTREGA;
-DROP TABLE Registro;
-DROP TABLE Mantenimiento;
-DROP TABLE Estado_mantto;
-DROP TABLE Tipo_mantenimiento;
-DROP TABLE Maquina;
-DROP TABLE Marca_maquina;
-DROP TABLE Estado_maquina;
-DROP TABLE Tipo_maquina;
-DROP TABLE Equipo_de_Soporte;
-DROP TABLE Estado_Equipo_Soporte;
-DROP TABLE Disponibilidad_Equipo_Soporte;
-DROP TABLE Tipo_Equipo_Soporte;
-DROP TABLE Plan_de_mantenimiento;
-DROP TABLE Criticidad;
-DROP TABLE Almacen;
-DROP TABLE Estado_Almacen;
-DROP TABLE Categoria_Almacen;
-DROP TABLE Proveedor ;
-DROP TABLE ALERTA_RETRASO;
-DROP TABLE NOTIFICACION;
-DROP TABLE EVENTO_LOGISTICO;
-DROP TABLE Orden_despacho ;
-DROP TABLE Movimiento ;
-DROP TABLE Ubicacion_almacen ;
-DROP TABLE Inventario ;
-DROP TABLE LOTE ;
-DROP TABLE PAQUETE;
-DROP TABLE PRODUCTO;
-DROP TABLE GUIA_REMISION;
-DROP TABLE EMPLEADO;
-DROP TABLE ORDEN_TRANSPORTE ;
-DROP TABLE CLIENTE ;
-DROP TABLE VEHICULO;
+DROP TABLE IF EXISTS UBICACION_ALMACEN CASCADE;
+DROP TABLE IF EXISTS REGISTRO CASCADE;
+DROP TABLE IF EXISTS MANTENIMIENTO CASCADE;
+DROP TABLE IF EXISTS ESTADO_MANTENIMIENTO CASCADE;
+DROP TABLE IF EXISTS TIPO_MANTENIMIENTO CASCADE;
+DROP TABLE IF EXISTS MAQUINA CASCADE;
+DROP TABLE IF EXISTS MARCA_MAQUINARIA CASCADE;
+DROP TABLE IF EXISTS ESTADO_MAQUINARIA CASCADE;
+DROP TABLE IF EXISTS TIPO_MAQUINARIA CASCADE;
+DROP TABLE IF EXISTS EQUIPO_SOPORTE CASCADE;
+DROP TABLE IF EXISTS ESTADO_EQUIPO_SOPORTE CASCADE;
+DROP TABLE IF EXISTS DISPONIBILIDAD_EQUIPO_SOPORTE CASCADE;
+DROP TABLE IF EXISTS TIPO_EQUIPO_SOPORTE CASCADE;
+DROP TABLE IF EXISTS PLAN_MANTENIMIENTO CASCADE;
+DROP TABLE IF EXISTS ALMACEN CASCADE;
+DROP TABLE IF EXISTS ESTADO_ALMACEN CASCADE;
+DROP TABLE IF EXISTS CATEGORIA_ALMACEN CASCADE;
+DROP TABLE IF EXISTS CRITICIDAD CASCADE;
+DROP TABLE IF EXISTS FOTO_INCIDENCIAS CASCADE;
+DROP TABLE IF EXISTS INCIDENCIAS CASCADE;
+DROP TABLE IF EXISTS INFORME_ENTREGA CASCADE;
+DROP TABLE IF EXISTS GUIA_REMISION CASCADE;
+DROP TABLE IF EXISTS TIPOS_INCIDENCIA CASCADE;
+DROP TABLE IF EXISTS ESTADOS_ENTREGA CASCADE;
+DROP TABLE IF EXISTS ORDEN_TRANSPORTE CASCADE;
+DROP TABLE IF EXISTS ALERTA_RETRASO CASCADE;
+DROP TABLE IF EXISTS NOTIFICACION CASCADE;
+DROP TABLE IF EXISTS EVENTO_LOGISTICO CASCADE;
+DROP TABLE IF EXISTS ESTADO_ALERTA CASCADE;
+DROP TABLE IF EXISTS CANAL CASCADE;
+DROP TABLE IF EXISTS TIPO_EVENTO CASCADE;
+DROP TABLE IF EXISTS CLIENTE CASCADE;
+DROP TABLE IF EXISTS PROVEEDOR CASCADE;
+DROP TABLE IF EXISTS VEHICULO CASCADE;
+DROP TABLE IF EXISTS ORDEN_DESPACHO CASCADE;
+DROP TABLE IF EXISTS MOVIMIENTO CASCADE;
+DROP TABLE IF EXISTS INVENTARIO CASCADE;
+DROP TABLE IF EXISTS CARGA CASCADE;
+DROP TABLE IF EXISTS CONTENEDOR CASCADE;
+DROP TABLE IF EXISTS LISTA_PACKING CASCADE;
+DROP TABLE IF EXISTS LISTA_PICKING CASCADE;
+DROP TABLE IF EXISTS PAQUETE CASCADE;
+DROP TABLE IF EXISTS LOTE CASCADE;
+DROP TABLE IF EXISTS EMPLEADO CASCADE;
+DROP TABLE IF EXISTS ESTADO_LISTA CASCADE;
+DROP TABLE IF EXISTS PRODUCTO CASCADE;
 
 
-
-
-CREATE TABLE VEHICULO (
-    idVehiculo CHAR(10) PRIMARY KEY,
-    tipo_vehiculo VARCHAR(64),
-    estado_vehiculo VARCHAR(64),
-    placa VARCHAR(15),
-    modelo VARCHAR(64)
+CREATE TABLE PRODUCTO (
+    IDPRODUCTO CHAR(8) PRIMARY KEY,
+    ESTADO VARCHAR(128),
+    UBICACION VARCHAR(64),
+    FECHA_INGRESO DATE,
+    FECHA_ENTREGA_ESTIMADA DATE
 );
 
-
-
-CREATE TABLE CLIENTE (
-    idCliente   NUMBER PRIMARY KEY,
-    nombre  VARCHAR(60),
-    telefono    VARCHAR(15),
-    email   VARCHAR(60),
-    apellido_paterno    VARCHAR(60),
-    apellido_materno    VARCHAR(60),
-    direcion    VARCHAR(250)
+-- Tabla ESTADO_LISTA
+CREATE TABLE ESTADO_LISTA (
+    IDESTADO CHAR(8) PRIMARY KEY,
+    DESCRIPCION VARCHAR(30)
 );
 
-
-
-CREATE TABLE LOTE (
-    idLote  NUMBER PRIMARY KEY,
-    idCliente NUMBER,
-    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente),
-    idPaquete NUMBER,
-    FOREIGN KEY (idPaquete) REFERENCES PAQUETE(idPaquete),
-    estado_lote VARCHAR(128),
-    cantidad_paquete    INT,
-    ubicacion_lote  VARCHAR(60),
-    fecha_creacion DATE
-);
-
-CREATE TABLE PAQUETE (
-    idPaquete   NUMBER PRIMARY KEY,
-    idProdcuto NUMBER,
-    FOREIGN KEY (idProdcuto) REFERENCES PRODUCTO(idProdcuto),
-    estado_paquete  VARCHAR(128),
-    cantidad_producto  INT,
-    ubicacion_paquete   VARCHAR(60),
-    fecha_creacion TIMESTAMP
-);
-
-
-CREATE TABLE PRODUCTO(
-    idProdcuto NUMBER PRIMARY KEY,
-    estado VARCHAR(128),
-    ubicacion VARCHAR(60),
-    Descripcion VARCHAR(250),
-    Empresa VARCHAR(100),
-    fecha_ingeso DATE,
-    fecha_picking TIMESTAMP
-);
-
-CREATE TABLE Inventario (
-    idInventario NUMBER PRIMARY KEY,
-    idProdcuto NUMBER,
-    stock_disponible NUMBER(10,2),
-    stock_reservado NUMBER(10,2),
-    stock_comprometido NUMBER(10,2),
-    FOREIGN KEY (idProdcuto) REFERENCES Producto(idProdcuto)
-);
-
-CREATE TABLE EMPLEADO(
-    idEmpleado NUMBER PRIMARY KEY,
+CREATE TABLE EMPLEADO (
+    idEmpleado CHAR(8) PRIMARY KEY,
     nombre VARCHAR(64),
     apellido_paterno VARCHAR(64),
     apellido_materno VARCHAR(64),
     telefono VARCHAR(15),
     dni CHAR(8),
-    area_trabajo   VARCHAR(64),
+    area_trabajo VARCHAR(64),
     rol VARCHAR(64)
 );
 
-
-CREATE TABLE Ubicacion_almacen (
-    id_ubicacion NUMBER PRIMARY KEY,
-    idLote NUMBER,
-    idEmpleado NUMBER,
-    capacidad_maxima NUMBER(10,2),
-    ubicacion VARCHAR2(100),
-    FOREIGN KEY (idLote) REFERENCES Lote(idLote),
-    FOREIGN KEY (idEmpleado) REFERENCES EMPLEADO(idEmpleado)
+-- Tabla LOTE
+CREATE TABLE LOTE (
+    IDLOTE CHAR(8) PRIMARY KEY,
+    IDCLIENTE CHAR(8),
+    IDPRODUCTO CHAR(8),
+    ESTADO_LOTE VARCHAR(128),
+    CANTIDAD_PRODUCTOS INT,
+    UBICACION_LOTE VARCHAR(64),
+    FECHA_INGRESO DATE,
+    FECHA_ENTREGA_ESTIMADA DATE,
+    FOREIGN KEY (IDPRODUCTO) REFERENCES PRODUCTO(IDPRODUCTO)
 );
 
-CREATE TABLE Movimiento (
-    idMovimiento NUMBER PRIMARY KEY,
-    idInventario NUMBER,
-    idEmpleado NUMBER,
-    cantidad NUMBER(10,2),
-    referencia_documento VARCHAR2(100),
-    tipo_movimiento VARCHAR2(50),
-    fecha_movimiento DATE,
-    FOREIGN KEY (idInventario) REFERENCES Inventario(idInventario),
-    FOREIGN KEY (idEmpleado) REFERENCES EMPLEADO(idEmpleado)
+-- Tabla PAQUETE
+CREATE TABLE PAQUETE (
+    IDPAQUETE CHAR(8) PRIMARY KEY,
+    IDPRODUCTO CHAR(8),
+    ESTADO_PAQUETE VARCHAR(128),
+    CANTIDAD_PRODUCTO INT,
+    UBICACION_PAQUETE VARCHAR(64),
+    PESO_PAQUETE NUMERIC(6,2),
+    UNIDAD_DE_PESO CHAR(2),
+    FECHA_CREACION DATE,
+    FECHA_ENTREGA_ESTIMADA DATE,
+	FOREIGN KEY (IDPRODUCTO) REFERENCES PRODUCTO(IDPRODUCTO)
 );
 
-CREATE TABLE Orden_despacho (
-    idOrden NUMBER PRIMARY KEY,
-    idMovimiento NUMBER,
-    cliente VARCHAR2(100),
-    estado VARCHAR2(50),
-    fecha_despacho DATE,
-    FOREIGN KEY (idMovimiento) REFERENCES Movimiento(idMovimiento)
+-- Tabla LISTA_PICKING
+CREATE TABLE LISTA_PICKING (
+    IDPICKING CHAR(8) PRIMARY KEY,
+    IDPRODUCTO CHAR(8),
+    IDESTADO CHAR(8),
+    FECHA_CREACION TIMESTAMP,
+    OBSERVACION VARCHAR(200),
+    FOREIGN KEY (IDPRODUCTO) REFERENCES PRODUCTO(IDPRODUCTO),
+    FOREIGN KEY (IDESTADO) REFERENCES ESTADO_LISTA(IDESTADO)
+);
+
+-- Tabla LISTA_PACKING
+CREATE TABLE LISTA_PACKING (
+    IDPACKING CHAR(8) PRIMARY KEY,
+    IDPAQUETE CHAR(8),
+    IDESTADO CHAR(8),
+    FECHA_CREACION TIMESTAMP,
+    OBSERVACION VARCHAR(200),
+    FOREIGN KEY (IDPAQUETE) REFERENCES PAQUETE(IDPAQUETE),
+    FOREIGN KEY (IDESTADO) REFERENCES ESTADO_LISTA(IDESTADO)
 );
 
 
-CREATE TABLE EVENTO_LOGISTICO(
-    idEvento NUMBER PRIMARY KEY,
-    idPaquete NUMBER,
-    idEmpleado NUMBER,
+CREATE TABLE CONTENEDOR (
+    IDCONTENEDOR CHAR(8) PRIMARY KEY,
+    ALTURA NUMERIC(6,2),
+    ANCHO NUMERIC(6,2),
+    LARGO NUMERIC(6,2)
+);
+
+CREATE TABLE CARGA (
+    IDCARGA CHAR(8) PRIMARY KEY,
+    IDPAQUETE CHAR(8),
+    IDCONTENEDOR CHAR(8),
+    PESO_CARGA NUMERIC(6,2),
+    UNIDAD_PESO CHAR(2),
+    FECHA_CREACION DATE,
+    CANTIDAD_PAQUETE INT,
+    FOREIGN KEY (IDPAQUETE) REFERENCES PAQUETE(IDPAQUETE),
+    FOREIGN KEY (IDCONTENEDOR) REFERENCES CONTENEDOR(IDCONTENEDOR)
+);
+
+------------------------------------------------------------------------------------------------------
+CREATE TABLE INVENTARIO (
+    idinventario CHAR(8) PRIMARY KEY,
+    nombre_producto VARCHAR(100) NOT NULL,
+    categoria VARCHAR(50),
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10, 2) NOT NULL,
+    proveedor VARCHAR(100),
+    fecha_ingreso DATE
+);
+
+CREATE TABLE MOVIMIENTO (
+    idmovimiento CHAR(8) PRIMARY KEY ,
+    idinventario CHAR(8) NOT NULL,
+	idempleado	CHAR(8),
+    tipo_movimiento VARCHAR(20) NOT NULL CHECK (tipo_movimiento IN ('Entrada', 'Salida')),
+    cantidad INT NOT NULL,
+    fecha_movimiento DATE NOT NULL,
+    observaciones VARCHAR(255),
+    FOREIGN KEY (idinventario) REFERENCES Inventario(idinventario),
+	FOREIGN KEY (idempleado) REFERENCES empleado(idempleado)
+);
+
+CREATE TABLE ORDEN_DESPACHO (
+    ID_ORDEN CHAR(8) PRIMARY KEY,
+    IDEMPLEADO CHAR(8),
+    IDMOVIMIENTO CHAR(8),
+    FECHA_DESPACHO DATE,
+    ESTADO VARCHAR(64),
+    FOREIGN KEY (IDEMPLEADO) REFERENCES EMPLEADO(IDEMPLEADO),
+    FOREIGN KEY (IDMOVIMIENTO) REFERENCES MOVIMIENTO(IDMOVIMIENTO)
+);
+
+CREATE TABLE VEHICULO (
+    IDVEHICULO CHAR(8) PRIMARY KEY,
+    TIPO_VEHICULO VARCHAR(64),
+    ESTADO_VEHICULO VARCHAR(64),
+    PLACA VARCHAR(15),
+    MODELO VARCHAR(64)
+);
+
+
+------------------------------------------------------------------------------------------
+CREATE TABLE PROVEEDOR (
+    idproveedor CHAR(8) PRIMARY KEY,
+    razon_social VARCHAR(100) NOT NULL,
+    ruc VARCHAR(11) UNIQUE NOT NULL,
+    correo VARCHAR(50),
+    numero_contacto_proveedor VARCHAR(11)
+);
+
+CREATE TABLE CLIENTE (
+    idCliente CHAR(8) PRIMARY KEY,
+    razon_social VARCHAR(100) NOT NULL,
+    ruc VARCHAR(11) UNIQUE NOT NULL,
+    correo VARCHAR(50),
+    numero_contacto_cliente VARCHAR(11)
+);
+
+-------------------------------------------------------------------------------------------
+CREATE TABLE TIPO_EVENTO (
+    idTipo CHAR(8) PRIMARY KEY,
+    descripcion		VARCHAR(50)
+);
+
+CREATE TABLE CANAL (
+    idCanal CHAR(8) PRIMARY KEY,
+    descripcion		VARCHAR(50)
+);
+
+CREATE TABLE ESTADO_ALERTA (
+    idEstado CHAR(8) PRIMARY KEY,
+    descripcion		VARCHAR(50)
+);
+
+CREATE TABLE EVENTO_LOGISTICO (
+    idEvento CHAR(8) PRIMARY KEY,
+    idPaquete CHAR(8),
+    idEmpleado CHAR(8),
     descripcion VARCHAR(255),
     fecha TIMESTAMP,
     lugar VARCHAR(128),
-    tipo VARCHAR(64),
+    idTipo CHAR(8),
     CONSTRAINT fk_empleado FOREIGN KEY (idEmpleado) REFERENCES EMPLEADO(idEmpleado),
-    CONSTRAINT fk_paquete FOREIGN KEY (idPaquete) REFERENCES PAQUETE(idPaquete)
+    CONSTRAINT fk_paquete FOREIGN KEY (idPaquete) REFERENCES PAQUETE(idPaquete),
+    CONSTRAINT fk_tipo_evento FOREIGN KEY (idTipo) REFERENCES TIPO_EVENTO(idTipo)
 );
 
-CREATE TABLE NOTIFICACION(
-    idNotificacion NUMBER PRIMARY KEY,
-    idPaquete NUMBER,
+CREATE TABLE NOTIFICACION (
+    idNotificacion CHAR(8) PRIMARY KEY,
+    idPaquete CHAR(8),
     fecha TIMESTAMP,
-    canal VARCHAR(64),
-    tipo VARCHAR(64),
+    idCanal CHAR(8),
+    idTipo CHAR(8),
     contenido VARCHAR(500),
-    CONSTRAINT fk_paquete_notificacion FOREIGN KEY (idPaquete) REFERENCES PAQUETE(idPaquete)
+    CONSTRAINT fk_paquete_notificacion FOREIGN KEY (idPaquete) REFERENCES PAQUETE(idPaquete),
+    CONSTRAINT fk_canal_notificacion FOREIGN KEY (idCanal) REFERENCES CANAL(idCanal),
+    CONSTRAINT fk_tipo_notificacion FOREIGN KEY (idTipo) REFERENCES TIPO_EVENTO(idTipo)
 );
 
-CREATE TABLE ALERTA_RETRASO(
-    idAlerta NUMBER PRIMARY KEY,
-    idPaquete NUMBER,
+CREATE TABLE ALERTA_RETRASO (
+    idAlerta CHAR(8) PRIMARY KEY,
+    idPaquete CHAR(8),
     fecha TIMESTAMP,
-    canal VARCHAR(64),
-    estado VARCHAR(64),
-    umbral_horas INT,
+    idCanal CHAR(8),
+    idEstado CHAR(8),
+    umbral_horas INTEGER,
     fecha_real TIMESTAMP,
     fecha_estimada TIMESTAMP,
-    CONSTRAINT fk_paquete_alerta FOREIGN KEY (idPaquete) REFERENCES PAQUETE(idPaquete)
+    CONSTRAINT fk_paquete_alerta FOREIGN KEY (idPaquete) REFERENCES PAQUETE(idPaquete),
+    CONSTRAINT fk_canal_alerta FOREIGN KEY (idCanal) REFERENCES CANAL(idCanal),
+    CONSTRAINT fk_estado_alerta FOREIGN KEY (idEstado) REFERENCES ESTADO_ALERTA(idEstado)
+);
+------------------------------------------------------------------------------------------
+-- Tabla principal de órdenes
+CREATE TABLE ORDEN_TRANSPORTE(
+    ID_ORDEN_TRANSPORTE CHAR(8) NOT NULL,
+    IDEMPLEADO CHAR(8) NOT NULL,
+    almacen_destino VARCHAR(20),
+    almacen_origen VARCHAR(20),
+    fecha_salida DATE,
+    hora_salida TIMESTAMP,  
+    PRIMARY KEY (ID_ORDEN_TRANSPORTE),
+    FOREIGN KEY (IDEMPLEADO) REFERENCES EMPLEADO(idEmpleado)
 );
 
-
-CREATE TABLE Proveedor (
-  ID_PROVEEDOR NUMBER PRIMARY KEY,
-  RAZON_SOCIAL VARCHAR2(100) NOT NULL,
-  RUC VARCHAR2(11) NOT NULL,
-  CORREO VARCHAR2(50) NOT NULL,
-  NUMERO_CONTACTO_PROVEEDOR VARCHAR2(11)
+-- Tablas de referencia (valores permitidos)
+CREATE TABLE ESTADOS_ENTREGA (
+    codigo VARCHAR(30) PRIMARY KEY,
+    descripcion VARCHAR(100)
 );
 
-CREATE TABLE Categoria_Almacen
+CREATE TABLE TIPOS_INCIDENCIA (
+    codigo VARCHAR(30) PRIMARY KEY,
+    descripcion VARCHAR(100)
+);
+
+-- Tablas que dependen de ORDEN_TRANSPORTE
+CREATE TABLE GUIA_REMISION (
+    idGuiaRemision CHAR(8),
+    ID_ORDEN_TRANSPORTE CHAR(8),
+    idVehiculo CHAR(8),
+    idCliente CHAR(8),
+    ruc_empresa VARCHAR(120),
+    fecha_emision DATE,
+    fecha_traslado DATE,  
+    PRIMARY KEY (idGuiaRemision),
+    FOREIGN KEY (ID_ORDEN_TRANSPORTE) REFERENCES ORDEN_TRANSPORTE(ID_ORDEN_TRANSPORTE),
+    FOREIGN KEY(idVehiculo) REFERENCES VEHICULO(IDVEHICULO),
+    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente)
+);
+
+CREATE TABLE INFORME_ENTREGA(
+    ID_INFORME_ENTREGA CHAR(8) NOT NULL,
+    ID_ORDEN_TRANSPORTE CHAR(8) NOT NULL,  
+    fecha_entrega DATE,
+    estado VARCHAR(30),  
+    nombre_receptor VARCHAR(100),  
+    PRIMARY KEY(ID_INFORME_ENTREGA),
+    FOREIGN KEY (ID_ORDEN_TRANSPORTE) REFERENCES ORDEN_TRANSPORTE(ID_ORDEN_TRANSPORTE),
+    FOREIGN KEY (estado) REFERENCES ESTADOS_ENTREGA(codigo)
+);
+
+CREATE TABLE INCIDENCIAS(
+    ID_INCIDENCIAS CHAR(8) NOT NULL,
+    ID_ORDEN_TRANSPORTE CHAR(8) NOT NULL,
+    idGuiaRemision CHAR(8) NOT NULL,
+    tipo VARCHAR(30),
+    descripcion VARCHAR(200),
+    fecha_registro DATE,
+    PRIMARY KEY(ID_INCIDENCIAS),
+    FOREIGN KEY (ID_ORDEN_TRANSPORTE) REFERENCES ORDEN_TRANSPORTE(ID_ORDEN_TRANSPORTE),
+    FOREIGN KEY (idGuiaRemision) REFERENCES GUIA_REMISION(idGuiaRemision),
+    FOREIGN KEY (tipo) REFERENCES TIPOS_INCIDENCIA(codigo)
+);
+
+CREATE TABLE FOTO_INCIDENCIAS(
+    ID_FOTO_INCIDENCIAS CHAR(8) PRIMARY KEY,
+    ID_INCIDENCIAS CHAR(8) NOT NULL,          
+    tipo_mime VARCHAR(50),         
+    nombre_archivo VARCHAR(100),  
+    fecha_captura DATE,
+    FOREIGN KEY (ID_INCIDENCIAS) REFERENCES INCIDENCIAS(ID_INCIDENCIAS)
+);
+
+-----------------------------------------------------------------------------------------------------------
+CREATE TABLE CRITICIDAD
 (
-  idCategoria NUMBER NOT NULL,
-  Nombre_categoria VARCHAR(50) NOT NULL,
-  PRIMARY KEY (idCategoria)
-);
-
-CREATE TABLE Estado_Almacen
-(
-  Id_estado NUMBER NOT NULL,
-  Nombre_estado VARCHAR(50) NOT NULL,
-  PRIMARY KEY (Id_estado)
-);
-
-CREATE TABLE Almacen
-(
-  Id_almacen NUMBER NOT NULL,
-  Direccion VARCHAR(255) NOT NULL,
-  Capacidad INT NOT NULL,
-  Id_empleado NUMBER NOT NULL,
-  Id_estado NUMBER NOT NULL,
-  Id_categoria NUMBER NOT NULL,
-  PRIMARY KEY (Id_almacen),
-  FOREIGN KEY (Id_empleado) REFERENCES Empleado(IdEmpleado),
-  FOREIGN KEY (Id_estado) REFERENCES Estado_Almacen(Id_estado),
-  FOREIGN KEY (Id_categoria) REFERENCES Categoria_Almacen(idCategoria)
-);
-
-CREATE TABLE Criticidad
-(
-  Id_criticidad NUMBER NOT NULL,
+  Id_criticidad CHAR(8) NOT NULL,
   Nivel VARCHAR(50) NOT NULL,
   PRIMARY KEY (Id_criticidad)
 );
 
-CREATE TABLE Plan_de_mantenimiento
+CREATE TABLE CATEGORIA_ALMACEN
 (
-  Id_plan NUMBER NOT NULL,
+  Id_categoria CHAR(8) NOT NULL,
+  Nombre_categoria VARCHAR(50) NOT NULL,
+  PRIMARY KEY (Id_categoria)
+);
+
+CREATE TABLE ESTADO_ALMACEN
+(
+  Id_estado CHAR(8) NOT NULL,
+  Nombre_estado VARCHAR(50) NOT NULL,
+  PRIMARY KEY (Id_estado)
+);
+
+CREATE TABLE ALMACEN
+(
+  Id_almacen CHAR(8) NOT NULL,
+  Direccion VARCHAR(255) NOT NULL,
+  Capacidad INT NOT NULL,
+  Idempleado CHAR(8) NOT NULL,
+  Id_estado CHAR(8) NOT NULL,
+  Id_categoria CHAR(8) NOT NULL,
+  PRIMARY KEY (Id_almacen),
+  FOREIGN KEY (Idempleado) REFERENCES Empleado(Idempleado),
+  FOREIGN KEY (Id_estado) REFERENCES Estado_Almacen(Id_estado),
+  FOREIGN KEY (Id_categoria) REFERENCES Categoria_Almacen(Id_categoria)
+);
+
+CREATE TABLE PLAN_MANTENIMIENTO
+(
+  Id_plan CHAR(8) NOT NULL,
   Descripcion VARCHAR(255) NOT NULL,
   Fecha_plan DATE NOT NULL,
-  Empleado_asigna INT NOT NULL,
-  Id_criticidad NUMBER NOT NULL,
+  Idempleado CHAR(8) NOT NULL,
+  Id_criticidad CHAR(8) NOT NULL,
   PRIMARY KEY (Id_plan),
-  FOREIGN KEY (Empleado_asigna) REFERENCES Empleado(IdEmpleado),
+  FOREIGN KEY (Idempleado) REFERENCES Empleado(Idempleado),
   FOREIGN KEY (Id_criticidad) REFERENCES Criticidad(Id_criticidad)
 );
 
-CREATE TABLE Tipo_Equipo_Soporte
+CREATE TABLE TIPO_EQUIPO_SOPORTE
 (
-  Id_tipo NUMBER NOT NULL,
+  Id_tipo CHAR(8) NOT NULL,
   Nombre_tipo VARCHAR(100) NOT NULL,
   PRIMARY KEY (Id_tipo)
 );
 
-CREATE TABLE Disponibilidad_Equipo_Soporte
+CREATE TABLE DISPONIBILIDAD_EQUIPO_SOPORTE
 (
-  Id_disponibilidad NUMBER NOT NULL,
+  Id_disponibilidad CHAR(8) NOT NULL,
   Nombre_disponibilidad VARCHAR(100) NOT NULL,
   PRIMARY KEY (Id_disponibilidad)
 );
 
-CREATE TABLE Estado_Equipo_Soporte
+CREATE TABLE ESTADO_EQUIPO_SOPORTE
 (
-  Id_estado NUMBER NOT NULL,
+  Id_estado CHAR(8) NOT NULL,
   Nombre_estado VARCHAR(100) NOT NULL,
   PRIMARY KEY (Id_estado)
 );
 
-CREATE TABLE Equipo_de_Soporte
+CREATE TABLE EQUIPO_SOPORTE
 (
-  Id_equipo_soporte NUMBER NOT NULL,
+  Id_equipo_soporte CHAR(8) NOT NULL,
   Nombre_equipo_soporte VARCHAR(100) NOT NULL,
-  Id_estado NUMBER NOT NULL,
-  Id_disponibilidad NUMBER NOT NULL,
-  Id_tipo NUMBER NOT NULL,
+  Id_estado CHAR(8) NOT NULL,
+  Id_disponibilidad CHAR(8) NOT NULL,
+  Id_tipo CHAR(8) NOT NULL,
   Horas_Uso INT NOT NULL,
-  Id_almacen NUMBER NOT NULL,
+  Id_almacen CHAR(8) NOT NULL,
   Descripcion VARCHAR(255) NOT NULL,
   PRIMARY KEY (Id_equipo_soporte),
   FOREIGN KEY (Id_estado) REFERENCES Estado_Equipo_Soporte(Id_estado),
@@ -282,146 +417,92 @@ CREATE TABLE Equipo_de_Soporte
   FOREIGN KEY (Id_almacen) REFERENCES Almacen(Id_almacen)
 );
 
-CREATE TABLE Tipo_maquina
+CREATE TABLE TIPO_MAQUINARIA
 (
-    id_tipo_maquina NUMBER NOT NULL,
+    id_tipo_maquina CHAR(8) NOT NULL,
     nombre_tipo VARCHAR(300),
     PRIMARY KEY (id_tipo_maquina)
 );
 
-CREATE TABLE Estado_maquina
+CREATE TABLE ESTADO_MAQUINARIA
 (
-    id_estado_maquina NUMBER NOT NULL,
+    id_estado_maquina CHAR(8) NOT NULL,
     nombre_estado VARCHAR(300),
     PRIMARY KEY (id_estado_maquina)
 );
 
-CREATE TABLE Marca_maquina
+CREATE TABLE MARCA_MAQUINARIA
 (
-    id_marca_maquina NUMBER NOT NULL,
+    id_marca_maquina CHAR(8) NOT NULL,
     nombre_marca VARCHAR(100) NOT NULL,
 	PRIMARY KEY (id_marca_maquina)
 );
 
-CREATE TABLE Maquina
+CREATE TABLE MAQUINA
 (
-    id_maquina NUMBER NOT NULL,
+    id_maquina CHAR(8) NOT NULL,
     Fecha_ultima_inspeccion DATE NOT NULL,
     Fecha_adquisicion DATE NOT NULL,
-    id_tipo_maquina NUMBER NOT NULL,
-    id_estado_maquina NUMBER NOT NULL,
-    id_marca_maquina NUMBER NOT NULL,
+    id_tipo_maquina CHAR(8) NOT NULL, 
+    id_estado_maquina CHAR(8) NOT NULL,
+    id_marca_maquina CHAR(8) NOT NULL,
     PRIMARY KEY (Id_maquina),
-    FOREIGN KEY (id_marca_maquina) REFERENCES Marca_maquina(id_marca_maquina),
-    FOREIGN KEY (id_tipo_maquina) REFERENCES Tipo_maquina(id_tipo_maquina),
-    FOREIGN KEY (id_estado_maquina) REFERENCES Estado_maquina(id_estado_maquina)
+    FOREIGN KEY (id_marca_maquina) REFERENCES Marca_maquinaria(id_marca_maquina),
+    FOREIGN KEY (id_tipo_maquina) REFERENCES Tipo_maquinaria(id_tipo_maquina),
+    FOREIGN KEY (id_estado_maquina) REFERENCES Estado_maquinaria(id_estado_maquina)
 );
 
-CREATE TABLE Tipo_mantenimiento
+CREATE TABLE TIPO_MANTENIMIENTO
 (
-  id_tipo_mant NUMBER NOT NULL,
+  id_tipo_mant CHAR(8) NOT NULL,
   nombre_tipo_mant VARCHAR(30) NOT NULL,
   PRIMARY KEY (id_tipo_mant)
 );
 
-CREATE TABLE Estado_mantto
+CREATE TABLE ESTADO_MANTENIMIENTO
 (
-  id_estado NUMBER NOT NULL,
+  id_estado CHAR(8) NOT NULL,
   estado VARCHAR(20) NOT NULL,
   PRIMARY KEY (id_estado)
 );
 
-CREATE TABLE Mantenimiento
+CREATE TABLE MANTENIMIENTO
 (
-  Id_Act_mantto NUMBER NOT NULL,
+  Id_Act_mantto CHAR(8) NOT NULL,
   Fecha_inicio_programado DATE NOT NULL,
   Fecha_fin_programado DATE NOT NULL,
-  Id_Orden NUMBER,
-  Id_plan NUMBER NOT NULL,
-  id_tipo_mant NUMBER NOT NULL,
-  Id_maquina NUMBER NOT NULL,
-  id_estado NUMBER NOT NULL,
+  Id_Orden CHAR(8),
+  Id_plan CHAR(8) NOT NULL,
+  id_tipo_mant CHAR(8) NOT NULL,
+  Id_maquina CHAR(8) NOT NULL,
+  id_estado CHAR(8) NOT NULL,
   PRIMARY KEY (Id_Act_mantto),
-  FOREIGN KEY (Id_plan) REFERENCES Plan_de_mantenimiento(Id_plan) ON DELETE CASCADE,
-  FOREIGN KEY (id_tipo_mant) REFERENCES Tipo_mantenimiento(id_tipo_mant),
-  FOREIGN KEY (id_maquina) REFERENCES Maquina(Id_maquina),
-  FOREIGN KEY (id_estado) REFERENCES Estado_mantto(id_estado)
+  FOREIGN KEY (Id_plan) REFERENCES PLAN_MANTENIMIENTO(Id_plan) ON DELETE CASCADE,
+  FOREIGN KEY (id_tipo_mant) REFERENCES TIPO_MANTENIMIENTO(id_tipo_mant),
+  FOREIGN KEY (id_maquina) REFERENCES MAQUINA(id_maquina),
+  FOREIGN KEY (id_estado) REFERENCES ESTADO_MANTENIMIENTO(id_estado)
 );
 
-CREATE TABLE Registro
+CREATE TABLE REGISTRO
 (
-  Id_registro NUMBER NOT NULL,
+  Id_registro CHAR(8) NOT NULL,
   Fecha_registro DATE NOT NULL,
-  IdEmpleado NUMBER NOT NULL,
-  Id_Act_mantto NUMBER NOT NULL,
+  Idempleado CHAR(8) NOT NULL,
+  Id_Act_mantto CHAR(8) NOT NULL,
   Calificacion INT NOT NULL,
   Observaciones VARCHAR(255),
   PRIMARY KEY (Id_registro),
-  FOREIGN KEY (IdEmpleado) REFERENCES Empleado(IdEmpleado),
+  FOREIGN KEY (Idempleado) REFERENCES Empleado(Idempleado),
   FOREIGN KEY (Id_Act_mantto) REFERENCES Mantenimiento(Id_Act_mantto)
 );
 
-CREATE TABLE ORDEN_TRANSPORTE(
-    ID_ORDEN_TRANSPORTE NUMBER(8) NOT NULL,
-    ID_EMPLEADO NUMBER(8) NOT NULL,
-    almacen_destino VARCHAR2(20),
-    almacen_origen VARCHAR2(20),
-    fecha_salida DATE,
-    hora_salida TIMESTAMP,  
-    PRIMARY KEY (ID_ORDEN_TRANSPORTE),
-    FOREIGN KEY (ID_EMPLEADO) REFERENCES EMPLEADO(ID_EMPLEADO)
-);
-
-
-CREATE TABLE GUIA_REMISION (
-    idGuiaRemision NUMBER(8),
-    ID_ORDEN_TRANSPORTE NUMBER(8),
-    idVehiculo NUMBER(8),
-    idCliente NUMBER(8),
-    ruc_empresa VARCHAR(120),
-    fecha_emision DATE,
-    fecha_traslado DATE,  
-    PRIMARY KEY (idGuiaRemision),
-    FOREIGN KEY (ID_ORDEN_TRANSPORTE) REFERENCES ORDEN_TRANSPORTE(ID_ORDEN_TRANSPORTE),
-    FOREIGN KEY(idVehiculo) REFERENCES Vehiculo(idVehiculo),
-    FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente)
-);
-
-CREATE TABLE INFORME_ENTREGA(
-    ID_INFORME_ENTREGA NUMBER(8) NOT NULL,
-    ID_ORDEN_TRANSPORTE NUMBER(8) NOT NULL,  
-    fecha_entrega DATE,
-    estado VARCHAR2(30),  
-    nombre_receptor VARCHAR2(100),  
-    PRIMARY KEY(ID_INFORME_ENTREGA),
-    FOREIGN KEY (ID_ORDEN_TRANSPORTE) REFERENCES ORDEN_TRANSPORTE(ID_ORDEN_TRANSPORTE)
-);
-
-
-CREATE TABLE INCIDENCIAS(
-    ID_INCIDENCIAS NUMBER(8) NOT NULL,
-    ID_ORDEN_TRANSPORTE NUMBER(8) NOT NULL,
-    idGuiaRemision NUMBER(8) NOT NULL,
-    tipo VARCHAR2(30),
-    descripcion VARCHAR2(200),
-    fecha_registro DATE,
-    PRIMARY KEY(ID_INCIDENCIAS),
-    FOREIGN KEY (ID_ORDEN_TRANSPORTE) REFERENCES ORDEN_TRANSPORTE(ID_ORDEN_TRANSPORTE),
-    FOREIGN KEY (idGuiaRemision) REFERENCES GUIA_REMISION(idGuiaRemision)
-);
-CREATE TABLE FOTO_INCIDENCIAS(
-    ID_FOTO_INCIDENCIAS NUMBER(8) PRIMARY KEY,
-    ID_INCIDENCIAS NUMBER(8) NOT NULL,          
-    tipo_mime VARCHAR2(50),         
-    nombre_archivo VARCHAR2(100),  
-    fecha_captura DATE,
-    FOREIGN KEY (ID_INCIDENCIAS) REFERENCES INCIDENCIAS(ID_INCIDENCIAS)
-);
-
-
-
-
-CREATE TABLE TRANSPORTISTA (
-    idEmpleado NUMBER,
-    FOREIGN KEY (idEmpleado) REFERENCES EMPLEADO(idEmpleado)
+CREATE TABLE UBICACION_ALMACEN (
+    idubicacion CHAR(8) PRIMARY KEY ,
+	idempleado CHAR(8),
+    idproducto CHAR(8) NOT NULL,
+    pasillo VARCHAR(10) NOT NULL,
+    estante VARCHAR(10) NOT NULL,
+    nivel VARCHAR(10) NOT NULL,
+    FOREIGN KEY (idproducto) REFERENCES PRODUCTO(idproducto),
+	FOREIGN KEY (idempleado) REFERENCES EMPLEADO(idempleado)
 );
